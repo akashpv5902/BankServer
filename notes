@@ -1,0 +1,44 @@
+Server Creation - Nodejs + express
+
+Basic commands
+---------------
+
+1) Creating package.json - npm init
+2)Creating node modules - npm i express (Installing express)
+3)install nodemon - npm install -g nodemon
+4)Run - nodemon index.js
+
+
+
+Basic steps
+-----------
+
+1)Creating a folder (BankServer)
+2)Create package.json file
+3)Install express
+4)Import express inside the index.js file
+5)Create an app using express
+6)Setup the port number
+7)resolving http request
+
+8)HTTP Response code
+    1xx-Information
+    2xx-successful
+    3xx-Redirection
+    4xx-client error
+    5xx-server error
+
+9)JWT Token 
+
+install JWT Token - npm i jsonwebtoken
+To Generate Token - sign()
+
+10)Middleware
+It comes in the middle of the request and response cycleon the nodejs execution process
+ 
+     1)Application specific middleware - for entire Application
+     req,res,next
+     2)Router specific middleware - validate token - verify() -jwtwebtoken
+
+11)Database Integration
+    1)Install mongoose - npm i mongoose 
