@@ -58,7 +58,9 @@ const login = (acno, pswd) => {
       status: true,
       statusCode: 200,
       message: 'Login succesfull',
-      token:token
+      token:token,
+      currentAcno:acno,
+      currentUser:currentUser
     }
     }
   
@@ -170,6 +172,36 @@ withdraw=(acno, pswd, amt)=> {
     }
   })
   }
+
+
+  // to delete an account
+
+ const deleteAcc =(acno)=>{
+  return db.User.deleteOne({acno})
+  .then(user=>{
+    if(user){
+      return{
+        status:true,
+        statusCode:200,
+        message:'user deleted successfully'
+      }
+      
+    }
+    else{
+      return{
+        status:false,
+        statusCode:400,
+        message:'user not found'
+      }
+    }
+  })
+ }
+
+
+
+
+
+
   
 const getTransaction=(acno)=> {
 return db.User.findOne({acno})
@@ -200,7 +232,8 @@ module.exports = {
   login,
   deposit,
   withdraw,
-  getTransaction
+  getTransaction,
+  deleteAcc
 
 }
 

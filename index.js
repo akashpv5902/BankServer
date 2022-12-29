@@ -144,3 +144,12 @@ app.post('/transaction',jwtMiddleware,(req,res)=>
     })
     
 })
+
+app.delete('/deleteAcc/:acno',(req,res)=>
+{
+    dataservice.deleteAcc(req.params.acno)
+    .then(result=>{
+        res.status(result.statusCode).json(result)
+    })
+    
+})
